@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#8e173f">
+<title>For Essie, My Queen ❤️</title>
+<style>
+:root{--wine:#741735;--rose:#e94d78;--pink:#ffd7e3;--cream:#fff7f8;--ink:#3c1425}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:radial-gradient(circle at 15% 10%,#ffe0e9,transparent 34%),linear-gradient(145deg,#fff8fa,#ffdbe5 55%,#f8b7ca);min-height:100vh;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;background-image:radial-gradient(#b52351 1px,transparent 1px);background-size:22px 22px}
+main{width:min(760px,92%);margin:auto;padding:28px 0 48px;position:relative}
+.top{text-align:center;padding:22px 8px 14px}
+.eyebrow{letter-spacing:.22em;text-transform:uppercase;font:600 11px Arial,sans-serif;color:var(--wine)}
+h1{font-size:clamp(42px,9vw,76px);line-height:.98;margin:15px 0 8px;color:var(--wine);font-weight:500}
+.subtitle{font-size:18px;color:#8c3854}
+.card{background:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.9);border-radius:28px;padding:clamp(20px,5vw,36px);box-shadow:0 18px 55px #8b24401c;backdrop-filter:blur(8px);margin:18px 0}
+.photo-wrap{width:min(270px,72%);margin:4px auto 20px;padding:8px;background:#fff;border-radius:48% 48% 22px 22px;box-shadow:0 12px 30px #8b24402a;transform:rotate(-1deg)}
+.photo-wrap img{display:block;width:100%;height:330px;object-fit:cover;object-position:center 38%;border-radius:48% 48% 16px 16px}
+.caption{text-align:center;font-style:italic;color:#99506a;font-size:15px}
+.count-label{text-align:center;text-transform:uppercase;letter-spacing:.2em;font:600 11px Arial,sans-serif;color:#99506a}
+.count{display:flex;justify-content:center;gap:10px;margin:18px 0 10px;flex-wrap:wrap}
+.unit{background:linear-gradient(150deg,#8d1b43,#c83260);color:white;border-radius:18px;min-width:88px;padding:15px 12px;text-align:center;box-shadow:0 8px 18px #8d1b4325}
+.unit strong{display:block;font:700 34px Arial,sans-serif}
+.unit span{font:10px Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;opacity:.9}
+.date{text-align:center;color:#8d1b43;font-size:16px;margin-top:12px}
+h2{text-align:center;color:var(--wine);font-size:27px;font-weight:500;margin:0 0 14px}
+.message{text-align:center;font-size:19px;line-height:1.65;margin:0 auto;max-width:560px}
+.small{text-align:center;font:12px Arial,sans-serif;color:#9b6478;margin-top:14px}
+button{display:block;margin:22px auto 0;border:0;border-radius:999px;padding:15px 25px;background:linear-gradient(100deg,#8b1b43,#e94d78);color:white;font-weight:700;font-size:15px;cursor:pointer;box-shadow:0 9px 20px #8b1b4330}
+button:hover{filter:brightness(1.07);transform:translateY(-1px)}
+.letter{display:none;margin-top:18px;padding:20px;border-radius:18px;background:#fff0f4;border:1px dashed #e5a1b5;text-align:center;font-size:18px;line-height:1.7}
+.letter.show{display:block;animation:rise .5s ease}
+.promise{font-size:20px;line-height:1.7;text-align:center;color:#70203d}
+footer{text-align:center;color:#9b526c;font:12px Arial,sans-serif;padding:14px}
+.heart{position:fixed;bottom:-30px;color:#d83b69;opacity:.3;animation:float 12s linear infinite;pointer-events:none}
+@keyframes float{to{transform:translateY(-110vh) rotate(30deg);opacity:0}}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:420px){.unit{min-width:70px;padding:12px 9px}.unit strong{font-size:29px}.photo-wrap img{height:290px}}
+</style>
+</head>
+<body>
+<main>
+  <header class="top">
+    <div class="eyebrow">A little something made with love</div>
+    <h1>For Essie</h1>
+    <div class="subtitle">My Queen, my favourite person. ❤️</div>
+  </header>
+
+  <section class="card">
+    <div class="photo-wrap"><img src="essie.jpg" alt="A special photo of Essie"></div>
+    <div class="caption">“If I could choose again, I'd still choose you.”</div>
+  </section>
+
+  <section class="card">
+    <div class="count-label" id="countLabel">The countdown to your special day</div>
+    <div class="count" id="countdown">
+      <div class="unit"><strong id="days">29</strong><span>Days</span></div>
+      <div class="unit"><strong id="hours">00</strong><span>Hours</span></div>
+      <div class="unit"><strong id="minutes">00</strong><span>Minutes</span></div>
+      <div class="unit"><strong id="seconds">00</strong><span>Seconds</span></div>
+    </div>
+    <div class="date">30 November 2026 · The day my queen was born</div>
+  </section>
+
+  <section class="card">
+    <h2>A message for today 💌</h2>
+    <p class="message" id="dailyMessage">Every day, I find another reason to be grateful that you are in my life.</p>
+    <div class="small" id="messageDate"></div>
+    <button id="letterButton" type="button">Open today's little love note 💗</button>
+    <div class="letter" id="letter"></div>
+  </section>
+
+  <section class="card">
+    <h2>One thing I want you to know</h2>
+    <p class="promise">Essie, I love you so much. I want you to know that I will always be there for you — to cheer you on, listen to you, support you, and stand beside you through the good days and the difficult ones. You are precious to me, my queen. ❤️</p>
+  </section>
+
+  <section class="card" id="birthdayCard" hidden>
+    <h2>Happy Birthday, My Queen! 🎂</h2>
+    <p class="message">Today is your day, Essie. I hope this new year of your life brings you joy, peace, beautiful surprises and everything your heart is hoping for. Thank you for being you. I love you, always. ❤️</p>
+  </section>
+  <footer>Made with love, especially for Essie · Always your queen 👑</footer>
+</main>
+<script>
+const birthday = new Date(2026, 10, 30, 0, 0, 0);
+const messages = [
+"Every day, I find another reason to be grateful that you are in my life.",
+"Your smile has a way of making an ordinary day feel special.",
+"Even when we're apart, you are never far from my thoughts.",
+"I hope today is gentle with you, my queen. You deserve good things.",
+"You don't have to be perfect to be precious to me. You are already enough.",
+"I am proud of you, including the little things you do that you think nobody notices.",
+"If today gets difficult, remember that you have someone who believes in you.",
+"Your happiness matters to me. I hope you find a reason to smile today.",
+"I wish I could pause time during every moment that makes you happy.",
+"Thank you for being part of my world. It is better with you in it.",
+"I will keep choosing patience, honesty and care with you.",
+"You deserve to be celebrated not just on your birthday, but every day.",
+"May something beautiful happen to you today. You deserve it, Essie.",
+"I love the person you are and the person you are becoming.",
+"Distance, busy days or hard moments won't change how much you mean to me.",
+"I want to be someone you can talk to, laugh with and lean on.",
+"Your dreams matter. I will always want to see you win.",
+"Just a reminder: my queen is loved, appreciated and never taken for granted.",
+"I hope you see yourself with the same kindness and beauty I see in you.",
+"One more day closer to celebrating the wonderful person you are.",
+"I may not have the perfect words every day, but my love for you is real.",
+"Thank you for the memories we have made and the ones still waiting for us.",
+"May your heart feel peaceful today. You deserve a love that feels safe.",
+"I am always in your corner, cheering for you, my queen.",
+"Your birthday is getting closer, but you are worth celebrating all year.",
+"I hope this little message makes you feel loved, even for a moment.",
+"Whatever today brings, please remember how special you are to me.",
+"I can't wait to celebrate you. The world became brighter on your birthday.",
+"Tomorrow is your day, Essie. I hope you feel just how loved you are."
+];
+const today = new Date();
+const dateOnly = new Date(today.getFullYear(),today.getMonth(),today.getDate());
+const dayIndex = Math.max(0, Math.min(messages.length-1, Math.floor((dateOnly-new Date(2026,10,1))/86400000)));
+document.getElementById('dailyMessage').textContent = messages[dayIndex] || messages[0];
+document.getElementById('messageDate').textContent = 'A little reminder for ' + today.toLocaleDateString(undefined,{weekday:'long',day:'numeric',month:'long'});
+document.getElementById('letterButton').addEventListener('click',()=>{
+ const box=document.getElementById('letter');
+ box.textContent='My queen, I hope you never doubt how much you mean to me. I may not get everything right, but I promise to keep showing up for you with love, care and honesty. You have a special place in my heart. — Always yours ❤️';
+ box.classList.add('show');
+ document.getElementById('letterButton').textContent='A hug for you, my queen ❤️';
+});
+function update(){
+ const now=new Date(); let diff=birthday-now;
+ if(diff<=0){document.getElementById('countLabel').textContent='Today is the day!';document.getElementById('countdown').hidden=true;document.getElementById('birthdayCard').hidden=false;return;}
+ const d=Math.floor(diff/86400000);diff%=86400000;
+ const h=Math.floor(diff/3600000);diff%=3600000;
+ const m=Math.floor(diff/60000);const s=Math.floor((diff%60000)/1000);
+ document.getElementById('days').textContent=d;
+ document.getElementById('hours').textContent=String(h).padStart(2,'0');
+ document.getElementById('minutes').textContent=String(m).padStart(2,'0');
+ document.getElementById('seconds').textContent=String(s).padStart(2,'0');
+}
+update();setInterval(update,1000);
+for(let i=0;i<9;i++){const el=document.createElement('div');el.className='heart';el.textContent='♥';el.style.left=(Math.random()*100)+'%';el.style.fontSize=(14+Math.random()*20)+'px';el.style.animationDelay=(Math.random()*12)+'s';el.style.animationDuration=(9+Math.random()*8)+'s';document.body.appendChild(el);}
+</script>
+</body>
+</html>
